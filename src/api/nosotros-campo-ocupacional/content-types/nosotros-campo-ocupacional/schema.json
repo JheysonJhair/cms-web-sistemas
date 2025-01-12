@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_campo_ocupacionals",
+  "info": {
+    "singularName": "nosotros-campo-ocupacional",
+    "pluralName": "nosotros-campo-ocupacionals",
+    "displayName": "Nosotros-campo-ocupacional"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "campoOcupacional": {
+      "type": "blocks"
+    }
+  }
+}

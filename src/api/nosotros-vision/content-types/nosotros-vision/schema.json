@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_visions",
+  "info": {
+    "singularName": "nosotros-vision",
+    "pluralName": "nosotros-visions",
+    "displayName": "Nosotros-vision"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descripcion": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_grado_titulos",
+  "info": {
+    "singularName": "nosotros-grado-titulo",
+    "pluralName": "nosotros-grado-titulos",
+    "displayName": "Nosotros-grado-titulo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "grado": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    }
+  }
+}

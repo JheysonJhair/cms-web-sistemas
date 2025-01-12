@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_perfil_profesionals",
+  "info": {
+    "singularName": "nosotros-perfil-profesional",
+    "pluralName": "nosotros-perfil-profesionals",
+    "displayName": "Nosotros-perfil-profesional"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "perfilProfesional": {
+      "type": "blocks"
+    }
+  }
+}

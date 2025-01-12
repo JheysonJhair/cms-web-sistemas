@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_organizacions",
+  "info": {
+    "singularName": "nosotros-organizacion",
+    "pluralName": "nosotros-organizacions",
+    "displayName": "Nosotros-organizacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "decano": {
+      "type": "string"
+    },
+    "decanoMail": {
+      "type": "email",
+      "required": true
+    },
+    "director": {
+      "type": "string"
+    },
+    "directorMail": {
+      "type": "email"
+    }
+  }
+}

@@ -398,6 +398,215 @@ export interface ApiHistoriaHistoria extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNosotrosCampoOcupacionalNosotrosCampoOcupacional
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_campo_ocupacionals';
+  info: {
+    displayName: 'Nosotros-campo-ocupacional';
+    pluralName: 'nosotros-campo-ocupacionals';
+    singularName: 'nosotros-campo-ocupacional';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campoOcupacional: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-campo-ocupacional.nosotros-campo-ocupacional'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosGradoTituloNosotrosGradoTitulo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_grado_titulos';
+  info: {
+    displayName: 'Nosotros-grado-titulo';
+    pluralName: 'nosotros-grado-titulos';
+    singularName: 'nosotros-grado-titulo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    grado: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-grado-titulo.nosotros-grado-titulo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosMisionNosotrosMision
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_misions';
+  info: {
+    displayName: 'Nosotros-mision';
+    pluralName: 'nosotros-misions';
+    singularName: 'nosotros-mision';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-mision.nosotros-mision'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosOrganizacionNosotrosOrganizacion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_organizacions';
+  info: {
+    displayName: 'Nosotros-organizacion';
+    pluralName: 'nosotros-organizacions';
+    singularName: 'nosotros-organizacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    decano: Schema.Attribute.String;
+    decanoMail: Schema.Attribute.Email & Schema.Attribute.Required;
+    director: Schema.Attribute.String;
+    directorMail: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-organizacion.nosotros-organizacion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosPerfilProfesionalNosotrosPerfilProfesional
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_perfil_profesionals';
+  info: {
+    displayName: 'Nosotros-perfil-profesional';
+    pluralName: 'nosotros-perfil-profesionals';
+    singularName: 'nosotros-perfil-profesional';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-perfil-profesional.nosotros-perfil-profesional'
+    > &
+      Schema.Attribute.Private;
+    perfilProfesional: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosPerfilNosotrosPerfil
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_perfils';
+  info: {
+    displayName: 'Nosotros-perfil-ingresante';
+    pluralName: 'nosotros-perfils';
+    singularName: 'nosotros-perfil';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    actitudes: Schema.Attribute.Blocks;
+    conocimientos: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    habilidades: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-perfil.nosotros-perfil'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosVisionNosotrosVision
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_visions';
+  info: {
+    displayName: 'Nosotros-vision';
+    pluralName: 'nosotros-visions';
+    singularName: 'nosotros-vision';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-vision.nosotros-vision'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -908,6 +1117,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::historia.historia': ApiHistoriaHistoria;
+      'api::nosotros-campo-ocupacional.nosotros-campo-ocupacional': ApiNosotrosCampoOcupacionalNosotrosCampoOcupacional;
+      'api::nosotros-grado-titulo.nosotros-grado-titulo': ApiNosotrosGradoTituloNosotrosGradoTitulo;
+      'api::nosotros-mision.nosotros-mision': ApiNosotrosMisionNosotrosMision;
+      'api::nosotros-organizacion.nosotros-organizacion': ApiNosotrosOrganizacionNosotrosOrganizacion;
+      'api::nosotros-perfil-profesional.nosotros-perfil-profesional': ApiNosotrosPerfilProfesionalNosotrosPerfilProfesional;
+      'api::nosotros-perfil.nosotros-perfil': ApiNosotrosPerfilNosotrosPerfil;
+      'api::nosotros-vision.nosotros-vision': ApiNosotrosVisionNosotrosVision;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
