@@ -641,6 +641,132 @@ export interface ApiNosotrosVisionNosotrosVision
   };
 }
 
+export interface ApiPlanStudioAreaCurricularPlanStudioAreaCurricular
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'plan_studio_area_curriculars';
+  info: {
+    displayName: 'PlanStudio-area-curricular';
+    pluralName: 'plan-studio-area-curriculars';
+    singularName: 'plan-studio-area-curricular';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    asignatura: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-studio-area-curricular.plan-studio-area-curricular'
+    > &
+      Schema.Attribute.Private;
+    numero_creditos: Schema.Attribute.Integer;
+    numero_cursos: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlanStudioAsignaturaPlanStudioAsignatura
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'plan_studio_asignaturas';
+  info: {
+    description: '';
+    displayName: 'PlanStudio-asignatura';
+    pluralName: 'plan-studio-asignaturas';
+    singularName: 'plan-studio-asignatura';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    asignatura: Schema.Attribute.String;
+    categoria: Schema.Attribute.String;
+    codigo: Schema.Attribute.String;
+    cr: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    h: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-studio-asignatura.plan-studio-asignatura'
+    > &
+      Schema.Attribute.Private;
+    NOMBRE_SEMESTRE: Schema.Attribute.String & Schema.Attribute.Required;
+    p: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    requisitos: Schema.Attribute.String;
+    t: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlanStudioMallaCurricularPlanStudioMallaCurricular
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'plan_studio_malla_curriculars';
+  info: {
+    displayName: 'PlanStudio-malla-curricular';
+    pluralName: 'plan-studio-malla-curriculars';
+    singularName: 'plan-studio-malla-curricular';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-studio-malla-curricular.plan-studio-malla-curricular'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlImage: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPlanStudioPlanStudio extends Struct.CollectionTypeSchema {
+  collectionName: 'plan_studios';
+  info: {
+    displayName: 'PlanStudio';
+    pluralName: 'plan-studios';
+    singularName: 'plan-studio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-studio.plan-studio'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlPdf: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1159,6 +1285,10 @@ declare module '@strapi/strapi' {
       'api::nosotros-perfil-profesional.nosotros-perfil-profesional': ApiNosotrosPerfilProfesionalNosotrosPerfilProfesional;
       'api::nosotros-perfil.nosotros-perfil': ApiNosotrosPerfilNosotrosPerfil;
       'api::nosotros-vision.nosotros-vision': ApiNosotrosVisionNosotrosVision;
+      'api::plan-studio-area-curricular.plan-studio-area-curricular': ApiPlanStudioAreaCurricularPlanStudioAreaCurricular;
+      'api::plan-studio-asignatura.plan-studio-asignatura': ApiPlanStudioAsignaturaPlanStudioAsignatura;
+      'api::plan-studio-malla-curricular.plan-studio-malla-curricular': ApiPlanStudioMallaCurricularPlanStudioMallaCurricular;
+      'api::plan-studio.plan-studio': ApiPlanStudioPlanStudio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

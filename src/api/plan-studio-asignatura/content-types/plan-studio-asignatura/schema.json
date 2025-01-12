@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_studio_asignaturas",
+  "info": {
+    "singularName": "plan-studio-asignatura",
+    "pluralName": "plan-studio-asignaturas",
+    "displayName": "PlanStudio-asignatura",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "string"
+    },
+    "asignatura": {
+      "type": "string"
+    },
+    "categoria": {
+      "type": "string"
+    },
+    "t": {
+      "type": "integer"
+    },
+    "p": {
+      "type": "integer"
+    },
+    "h": {
+      "type": "integer"
+    },
+    "cr": {
+      "type": "integer"
+    },
+    "requisitos": {
+      "type": "string"
+    },
+    "NOMBRE_SEMESTRE": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_studio_area_curriculars",
+  "info": {
+    "singularName": "plan-studio-area-curricular",
+    "pluralName": "plan-studio-area-curriculars",
+    "displayName": "PlanStudio-area-curricular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "asignatura": {
+      "type": "string"
+    },
+    "numero_cursos": {
+      "type": "integer"
+    },
+    "numero_creditos": {
+      "type": "integer"
+    }
+  }
+}

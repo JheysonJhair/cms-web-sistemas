@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_studio_malla_curriculars",
+  "info": {
+    "singularName": "plan-studio-malla-curricular",
+    "pluralName": "plan-studio-malla-curriculars",
+    "displayName": "PlanStudio-malla-curricular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "urlImage": {
+      "type": "string"
+    }
+  }
+}

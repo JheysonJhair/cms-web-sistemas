@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_studios",
+  "info": {
+    "singularName": "plan-studio",
+    "pluralName": "plan-studios",
+    "displayName": "PlanStudio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "urlPdf": {
+      "type": "string"
+    }
+  }
+}
