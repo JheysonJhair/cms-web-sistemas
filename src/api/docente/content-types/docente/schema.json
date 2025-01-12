@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docentes",
+  "info": {
+    "singularName": "docente",
+    "pluralName": "docentes",
+    "displayName": "Docente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "gradoAcademico": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "email"
+    },
+    "cv": {
+      "type": "string"
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

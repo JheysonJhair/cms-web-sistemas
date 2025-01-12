@@ -369,6 +369,42 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDocenteDocente extends Struct.CollectionTypeSchema {
+  collectionName: 'docentes';
+  info: {
+    displayName: 'Docente';
+    pluralName: 'docentes';
+    singularName: 'docente';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    correo: Schema.Attribute.Email;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cv: Schema.Attribute.String;
+    gradoAcademico: Schema.Attribute.String;
+    imagen: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::docente.docente'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHistoriaHistoria extends Struct.CollectionTypeSchema {
   collectionName: 'historias';
   info: {
@@ -1116,6 +1152,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::docente.docente': ApiDocenteDocente;
       'api::historia.historia': ApiHistoriaHistoria;
       'api::nosotros-campo-ocupacional.nosotros-campo-ocupacional': ApiNosotrosCampoOcupacionalNosotrosCampoOcupacional;
       'api::nosotros-grado-titulo.nosotros-grado-titulo': ApiNosotrosGradoTituloNosotrosGradoTitulo;
