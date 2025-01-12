@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiDocenteDocente extends Struct.CollectionTypeSchema {
   collectionName: 'docentes';
   info: {
+    description: '';
     displayName: 'Docente';
     pluralName: 'docentes';
     singularName: 'docente';
@@ -387,10 +388,7 @@ export interface ApiDocenteDocente extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     cv: Schema.Attribute.String;
     gradoAcademico: Schema.Attribute.String;
-    imagen: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    imagen: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

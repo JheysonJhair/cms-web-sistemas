@@ -4,7 +4,8 @@
   "info": {
     "singularName": "docente",
     "pluralName": "docentes",
-    "displayName": "Docente"
+    "displayName": "Docente",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,14 +28,7 @@
       "type": "string"
     },
     "imagen": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      "type": "string"
     }
   }
 }
