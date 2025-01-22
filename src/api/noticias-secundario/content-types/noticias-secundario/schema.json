@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias_secundarios",
+  "info": {
+    "singularName": "noticias-secundario",
+    "pluralName": "noticias-secundarios",
+    "displayName": "NoticiasSecundario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "urlImage": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "lugar": {
+      "type": "string"
+    },
+    "horaInicio": {
+      "type": "time"
+    },
+    "urlPdf": {
+      "type": "string"
+    }
+  }
+}

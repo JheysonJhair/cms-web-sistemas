@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias_principals",
+  "info": {
+    "singularName": "noticias-principal",
+    "pluralName": "noticias-principals",
+    "displayName": "NoticiasPrincipal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "urlImage": {
+      "type": "string"
+    }
+  }
+}

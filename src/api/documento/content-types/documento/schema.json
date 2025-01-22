@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documentos",
+  "info": {
+    "singularName": "documento",
+    "pluralName": "documentos",
+    "displayName": "Documento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "fechaPublicacion": {
+      "type": "date"
+    },
+    "urlPdf": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

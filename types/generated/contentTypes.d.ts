@@ -403,6 +403,65 @@ export interface ApiDocenteDocente extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDocumentoDocumento extends Struct.CollectionTypeSchema {
+  collectionName: 'documentos';
+  info: {
+    description: '';
+    displayName: 'Documento';
+    pluralName: 'documentos';
+    singularName: 'documento';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fechaPublicacion: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::documento.documento'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlPdf: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
+  collectionName: 'galerias';
+  info: {
+    displayName: 'Galeria';
+    pluralName: 'galerias';
+    singularName: 'galeria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::galeria.galeria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlImage: Schema.Attribute.String;
+  };
+}
+
 export interface ApiHistoriaHistoria extends Struct.CollectionTypeSchema {
   collectionName: 'historias';
   info: {
@@ -638,6 +697,70 @@ export interface ApiNosotrosVisionNosotrosVision
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNoticiasPrincipalNoticiasPrincipal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'noticias_principals';
+  info: {
+    displayName: 'NoticiasPrincipal';
+    pluralName: 'noticias-principals';
+    singularName: 'noticias-principal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::noticias-principal.noticias-principal'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlImage: Schema.Attribute.String;
+  };
+}
+
+export interface ApiNoticiasSecundarioNoticiasSecundario
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'noticias_secundarios';
+  info: {
+    description: '';
+    displayName: 'NoticiasSecundario';
+    pluralName: 'noticias-secundarios';
+    singularName: 'noticias-secundario';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.String;
+    horaInicio: Schema.Attribute.Time;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::noticias-secundario.noticias-secundario'
+    > &
+      Schema.Attribute.Private;
+    lugar: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    urlImage: Schema.Attribute.String;
+    urlPdf: Schema.Attribute.String;
   };
 }
 
@@ -1277,6 +1400,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::docente.docente': ApiDocenteDocente;
+      'api::documento.documento': ApiDocumentoDocumento;
+      'api::galeria.galeria': ApiGaleriaGaleria;
       'api::historia.historia': ApiHistoriaHistoria;
       'api::nosotros-campo-ocupacional.nosotros-campo-ocupacional': ApiNosotrosCampoOcupacionalNosotrosCampoOcupacional;
       'api::nosotros-grado-titulo.nosotros-grado-titulo': ApiNosotrosGradoTituloNosotrosGradoTitulo;
@@ -1285,6 +1410,8 @@ declare module '@strapi/strapi' {
       'api::nosotros-perfil-profesional.nosotros-perfil-profesional': ApiNosotrosPerfilProfesionalNosotrosPerfilProfesional;
       'api::nosotros-perfil.nosotros-perfil': ApiNosotrosPerfilNosotrosPerfil;
       'api::nosotros-vision.nosotros-vision': ApiNosotrosVisionNosotrosVision;
+      'api::noticias-principal.noticias-principal': ApiNoticiasPrincipalNoticiasPrincipal;
+      'api::noticias-secundario.noticias-secundario': ApiNoticiasSecundarioNoticiasSecundario;
       'api::plan-studio-area-curricular.plan-studio-area-curricular': ApiPlanStudioAreaCurricularPlanStudioAreaCurricular;
       'api::plan-studio-asignatura.plan-studio-asignatura': ApiPlanStudioAsignaturaPlanStudioAsignatura;
       'api::plan-studio-malla-curricular.plan-studio-malla-curricular': ApiPlanStudioMallaCurricularPlanStudioMallaCurricular;
